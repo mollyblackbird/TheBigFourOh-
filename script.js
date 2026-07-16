@@ -1,20 +1,8 @@
-
-🎉
-
-Happy 40th Birthday Patricia!
-
-Leave your birthday wishes below.
-
------------------------
-
-Name (optional)
-
-________________
-
-Message
-
-____________________
-
-____________________
-
-[ Send ❤️ ]
+await supabase
+  .from('messages')
+  .insert([
+    {
+      name: name,
+      message: message
+    }
+  ]);
