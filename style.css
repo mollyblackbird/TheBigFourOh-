@@ -1,1 +1,22 @@
 
+body {
+    font-family: Verdana, sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+button {
+    padding: 12px 25px;
+}
