@@ -6,7 +6,7 @@ const supabase = window.supabase.createClient(
     supabaseKey
 );
 
-const form = document.getElementById("birthdayForm");
+const form = document.getElementById("Birthday Messages");
 
 form.addEventListener("submit", async (event) => {
 
