@@ -5,3 +5,35 @@ const supabase = window.supabase.createClient(
     supabaseUrl,
     supabaseKey
 );
+
+const form = document.getElementById("birthdayForm");
+
+form.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    const message = document.getElementById("message").value;
+
+    const { error } = await supabase
+        .from("messages")
+        .insert([
+            {
+                name: name,
+                message: message
+            }
+        ]);
+
+    if (error) {
+
+        alert("Something went wrong.");
+
+    } else {
+
+        alert("🎉 Thank you for your birthday message!");
+
+        form.reset();
+    }
+
+});
