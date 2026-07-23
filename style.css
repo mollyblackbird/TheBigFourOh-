@@ -4,7 +4,7 @@ margin:0;
 
 font-family:Verdana, Helvetica, sans-serif;
 
-background:linear-gradient(135deg,#ff0042,#feadad);
+background:linear-gradient(135deg,#947CD4,#E3CCF8;
 
 display:flex;
 
@@ -20,7 +20,7 @@ padding:20px;
 
 .container{
 
-background:#ffdddd;
+background:##FCFFC8;
 
 padding:40px;
 
@@ -38,7 +38,7 @@ text-align:center;
 
 h1{
 
-color:000000;
+color:#D98CF4
 
 font-size:50px;
 
