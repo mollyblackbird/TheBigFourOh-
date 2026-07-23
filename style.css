@@ -91,9 +91,9 @@ resize:none;
 
 button{
 
-background:#D1B3FE;
+background:#9579D0;
 
-color:white;
+color:#E1F57A;
 
 border:none;
 
@@ -111,7 +111,7 @@ transition:.3s;
 
 button:hover{
 
-background:#9579D0;
+background:#7A39D0;
 
 }
 
