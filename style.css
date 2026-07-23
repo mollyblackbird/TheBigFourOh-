@@ -2,7 +2,7 @@ body{
 
 margin:0;
 
-font-family:Arial, Helvetica, sans-serif;
+font-family:Verdana, Helvetica, sans-serif;
 
 background:linear-gradient(135deg,#ff0042,#feadad);
 
@@ -91,9 +91,9 @@ resize:none;
 
 button{
 
-background:94e4d4;
+background:#947CD4;
 
-color:white;
+color:#E1F57A;
 
 border:none;
 
@@ -111,7 +111,7 @@ transition:.3s;
 
 button:hover{
 
-background:#003d73;
+background:#8FA3D0;
 
 }
 
