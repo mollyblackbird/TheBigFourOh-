@@ -2,7 +2,7 @@ body{
 
 margin:0;
 
-font-family:Verdana, Helvetica, sans-serif;
+font-family:Verdana, Helvetica;
 
 background:linear-gradient(135deg,#94AEFF,#FFBCF8);
 
@@ -38,7 +38,7 @@ text-align:center;
 
 h1{
 
-color:#00539f;
+color:#7260F0;
 
 font-size:40px;
 
@@ -50,7 +50,7 @@ h2{
 
 margin-top:0;
 
-color:#444;
+color:#B89CF0;
 
 }
 
@@ -91,7 +91,7 @@ resize:none;
 
 button{
 
-background:#00539f;
+background:#D1B3FE;
 
 color:white;
 
@@ -111,7 +111,7 @@ transition:.3s;
 
 button:hover{
 
-background:#003d73;
+background:#9579D0;
 
 }
 
