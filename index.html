@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="style.css">
-<h1><b></b>The Big 4-OH!</h1><b/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 40th Birthday!</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-  <div class="container">
-I'm turning <b></b>40 today!<b/><p>
-Please leave a birthday message, some good wishes, a joke or even your best advice about anything you want!
-    </div>
- <p>
- <form id="Birthday Messages">
+
+<div class="container">
+
+<h1>🎉 Happy 40th Birthday! 🎉</h1>
+
+<h2>Leave a birthday message ❤️</h2>
+
+<p>
+Thank you for taking a few moments of your busy life.
+Leave a message below that will become part of the birthday memories.
+</p>
+
+<form id="birthdayForm">
 
 <input
 type="text"
@@ -21,7 +34,7 @@ placeholder="Your name (optional)">
 
 <textarea
 id="message"
-placeholder="Write your birthday message"
+placeholder="Write your birthday message..."
 required>
 </textarea>
 
@@ -30,7 +43,33 @@ Send ❤️
 </button>
 
 </form>
-  </body>
+
+</div>
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<h2>🎉 Thank You!</h2>
+
+<p>
+Your birthday message has been received.
+</p>
+
+<button onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <script src="script.js"></script>
+
+</body>
+
 </html>
