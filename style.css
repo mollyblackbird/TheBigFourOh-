@@ -4,7 +4,7 @@ margin:0;
 
 font-family:Arial, Helvetica, sans-serif;
 
-background:linear-gradient(135deg,#ffd89b,#19547b);
+background:linear-gradient(135deg,#ff0042,#feadad);
 
 display:flex;
 
@@ -20,7 +20,7 @@ padding:20px;
 
 .container{
 
-background:white;
+background:#ffdddd;
 
 padding:40px;
 
@@ -38,9 +38,9 @@ text-align:center;
 
 h1{
 
-color:#00539f;
+color:000000;
 
-font-size:40px;
+font-size:50px;
 
 margin-bottom:10px;
 
@@ -91,7 +91,7 @@ resize:none;
 
 button{
 
-background:#00539f;
+background:94e4d4;
 
 color:white;
 
