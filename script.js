@@ -1,4 +1,5 @@
 const supabaseUrl = "https://ozctyywmsukcsryhnsud.supabase.co";
+
 const supabaseKey = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
 
 const supabase = window.supabase.createClient(
@@ -6,34 +7,55 @@ const supabase = window.supabase.createClient(
     supabaseKey
 );
 
-const form = document.getElementById("Birthday Messages");
+const form = document.getElementById("birthdayForm");
 
-form.addEventListener("submit", async (event) => {
+const popup = document.getElementById("popup");
 
-    event.preventDefault();
+form.addEventListener("submit", async function(event){
 
-    const name = document.getElementById("name").value;
+event.preventDefault();
 
-    const message = document.getElementById("message").value;
+const name = document.getElementById("name").value;
 
-    const { error } = await supabase
-        .from("messages")
-        .insert([
-            {
-                name: name,
-                message: message
-            }
-        ]);
+const message = document.getElementById("message").value;
 
-    if (error) {
+const { error } = await supabase
 
-        alert("Something went wrong.");
+.from("messages")
 
-    } else {
+.insert([
+{
+name:name,
+message:message
+}
+]);
 
-        alert("🎉 Thank you for your birthday message!");
+if(error){
 
-        form.reset();
-    }
+alert("Something went wrong.\n\n"+error.message);
+
+return;
+
+}
+
+confetti({
+
+particleCount:200,
+
+spread:120,
+
+origin:{y:0.6}
 
 });
+
+popup.style.display="flex";
+
+form.reset();
+
+});
+
+function closePopup(){
+
+popup.style.display="none";
+
+}
