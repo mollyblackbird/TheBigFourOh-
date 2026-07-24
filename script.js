@@ -34,11 +34,11 @@ message:message
 }
 ]);
 
-if(error){
-
-alert("Something went wrong.\n\n"+error.message);
-
-return;
+if (error) {
+    console.error("Supabase error:", error);
+    alert(JSON.stringify(error, null, 2));
+    return;
+}
 
 }
 
