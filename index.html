@@ -1,538 +1,137 @@
-/* ===========================
-   GLOBAL STYLES
-=========================== */
+<!DOCTYPE html>
+<html lang="en">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<head>
 
-body{
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    font-family:'Poppins',sans-serif;
+    <title>Made in 1986</title>
 
-background: linear-gradient(135deg, #947CD4, #F5D6FA);
-  
+    <link rel="stylesheet" href="style.css">
 
-    color:white;
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    min-height:100vh;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    display:flex;
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    justify-content:center;
+</head>
 
-    align-items:center;
+<body>
 
-    overflow-x:hidden;
+<div class="background-overlay"></div>
 
-    position:relative;
+<div class="container">
 
-}
+    <div class="card">
 
-/* ===========================
-   Animated Background
-=========================== */
+        <div class="hero">
 
-body::before{
+            <h1>Curiosity won!</h1>
 
-    content:"";
+            <p class="subtitle">
+                Collecting messages from strangers.
+            </p>
 
-    position:fixed;
+            <p class="description">
+                I'm turning 40 today and I'm creating a birthday project.<br>
+               Please leave a birthday message or <br>
+               Share your best advice so far or <br>
+               A song you would play on your birthday <br>
+            </p>
 
-    width:200%;
+        </div>
 
-    height:200%;
+        <form id="birthdayForm">
 
+            <div class="form-group">
 
- background: linear-gradient(135deg, #947CD4, #F5D6FA);
+                <label for="name">
+                    Your Name (Optional)
+                </label>
 
-    background-size:80px 80px;
+                <input
+                    type="text"
+                    id="name"
+                    maxlength="60"
+                    placeholder="Your name">
 
-    animation:moveBackground 45s linear infinite;
+            </div>
 
-    opacity:.45;
+            <div class="form-group">
 
-    z-index:-3;
+                <label for="message">
+                    Your Birthday Message
+                </label>
 
-}
+                <textarea
+                    id="message"
+                    maxlength="500"
+                    required
+                    placeholder="Write something memorable..."></textarea>
 
-@keyframes moveBackground{
+                <div class="counter">
+                    <span id="characters">0</span>/500
+                </div>
 
-    from{
-        transform:translate(0,0);
-    }
+            </div>
 
-    to{
-        transform:translate(-120px,-120px);
-    }
+            <button
+                id="submitButton"
+                type="submit">
 
-}
+                Send Birthday Wish
 
-/* Dark overlay */
+            </button>
 
-.background-overlay{
+        </form>
 
-    position:fixed;
+    </div>
 
-    inset:0;
+</div>
 
-     background: linear-gradient(135deg, #947CD4, #F5D6FA);
+<!-- Thank You Popup -->
 
-    backdrop-filter:blur(2px);
+<div id="popup" class="popup hidden">
 
-    z-index:-2;
+    <div class="popup-content">
 
-}
+        <div class="success-icon">
+            🎉
+        </div>
 
-/* ===========================
-   Main Container
-=========================== */
+        <h2>Thank You!</h2>
 
-.container{
+        <p>
 
-    width:100%;
+            Your birthday message has been saved successfully.
 
-    max-width:700px;
+        </p>
 
-    padding:40px 20px;
+        <button id="closePopup">
+            Close
+        </button>
 
-}
+    </div>
 
-/* ===========================
-   Card
-=========================== */
+</div>
 
-.card{
+<!-- Loading -->
 
-    background: #9579D0;
+<div id="loading" class="loading hidden">
 
-    backdrop-filter:blur(18px);
+    <div class="spinner"></div>
 
-    border:1px solid rgba(255,255,250,1);
+    <p>Saving your message...</p>
 
-    border-radius:24px;
+</div>
 
-    padding:45px;
+<script src="script.js"></script>
 
-    box-shadow:
+</body>
 
-    0 20px 60px rgba(0,0,0,.45),
-
-    0 0 30px rgba(255,215,0,.08);
-
-    animation:fadeIn 1.2s ease;
-
-}
-
-@keyframes fadeIn{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ===========================
-   Hero Section
-=========================== */
-
-.hero{
-
-    text-align:center;
-
-    margin-bottom:35px;
-
-}
-
-.hero h1{
-
-    font-size:2.8rem;
-
-    color:#E1F57A;
-
-    margin-bottom:15px;
-
-    line-height:1.2;
-
-}
-
-.subtitle{
-
-    font-size:1.2rem;
-   color:white;
-
-    font-weight:600;
-
-    margin-bottom:10px;
-
-}
-
-.description{
-
-    color:#E1F57A;
-
-    line-height:1.7;
-
-    font-size:.95rem;
-
-}
-
-/* ===========================
-   Form
-=========================== */
-
-.form-group{
-
-    margin-bottom:25px;
-
-}
-
-label{
-
-    display:block;
-
-    margin-bottom:8px;
-
-    font-weight:600;
-
-    color:#E1F57A;
-
-}
-
-input,
-textarea{
-
-    width:100%;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:12px;
-
-    padding:16px;
-
-    font-size:16px;
-
-    font-family:inherit;
-
-    background:rgba(251,246,211,1);
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,.10);
-
-    transition:.3s;
-
-}
-
-input::placeholder,
-textarea::placeholder{
-
-    color:#bbbbbb;
-
-}
-
-input:focus,
-textarea:focus{
-
-    border-color:#FFD54A;
-
-    box-shadow:0 0 12px rgba(255,215,0,.35);
-
-}
-
-textarea{
-
-    resize:none;
-
-    min-height:170px;
-
-}
-
-/* ===========================
-   Character Counter
-=========================== */
-
-.counter{
-
-    text-align:right;
-
-    margin-top:8px;
-
-    color:#cccccc;
-
-    font-size:.85rem;
-
-}
-
-/* ===========================
-   Button
-=========================== */
-
-button{
-
-    width:100%;
-
-    padding:17px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background: #7C57D0;
-
-    color: #E1F57A;
-
-    font-weight:700;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-
-    0 15px 35px rgba(255,215,0,.30);
-
-}
-
-button:active{
-
-    transform:scale(.98);
-
-}
-
-/* ===========================
-   Popup
-=========================== */
-
-.popup{
-
-    position:fixed;
-
-    inset:0;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.65);
-
-    z-index:100;
-
-}
-
-.popup-content{
-
-    width:90%;
-
-    max-width:420px;
-
-    background:#ffffff;
-
-    color:#222;
-
-    border-radius:20px;
-
-    padding:35px;
-
-    text-align:center;
-
-    animation:popup .4s ease;
-
-}
-
-@keyframes popup{
-
-    from{
-
-        transform:scale(.75);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:scale(1);
-
-        opacity:1;
-
-    }
-
-}
-
-.success-icon{
-
-    font-size:70px;
-
-    margin-bottom:15px;
-
-}
-
-.popup h2{
-
-    margin-bottom:15px;
-
-    color:#111;
-
-}
-
-.popup p{
-
-    margin-bottom:25px;
-
-    line-height:1.6;
-
-}
-
-.popup button{
-
-    background:#111;
-
-    color:white;
-
-}
-
-/* ===========================
-   Loading Screen
-=========================== */
-
-.loading{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.80);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:150;
-
-}
-
-.spinner{
-
-    width:70px;
-
-    height:70px;
-
-    border:6px solid rgba(255,255,255,.20);
-
-    border-top:6px solid #FFD54A;
-
-    border-radius:50%;
-
-    animation:spin .8s linear infinite;
-
-    margin-bottom:20px;
-
-}
-
-@keyframes spin{
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-}
-
-/* ===========================
-   Utility
-=========================== */
-
-.hidden{
-
-    display:none;
-
-}
-
-/* ===========================
-   Responsive
-=========================== */
-
-@media(max-width:700px){
-
-    .card{
-
-        padding:28px;
-
-    }
-
-    .hero h1{
-
-        font-size:2rem;
-
-    }
-
-    .subtitle{
-
-        font-size:1rem;
-
-    }
-
-    button{
-
-        font-size:16px;
-
-    }
-
-}
-
-@media(max-width:450px){
-
-    .hero h1{
-
-        font-size:1.7rem;
-
-    }
-
-    input,
-    textarea{
-
-        font-size:15px;
-
-        padding:14px;
-
-    }
-
-}
+</html>
