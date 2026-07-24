@@ -45,9 +45,8 @@ body::before{
 
     height:200%;
 
-    background:
 
-    radial-gradient(circle,#DFD7F5 2px,transparent 2px);
+ background: linear-gradient(135deg, #947CD4, #F5D6FA);
 
     background-size:80px 80px;
 
