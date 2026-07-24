@@ -12,6 +12,8 @@ const form = document.getElementById("birthdayForm");
 const popup = document.getElementById("popup");
 
 form.addEventListener("submit", async function(event){
+    
+    console.log("FORM SUBMITTED");
 
 event.preventDefault();
 
