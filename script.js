@@ -59,3 +59,29 @@ function closePopup(){
 popup.style.display="none";
 
 }
+
+const sparkleContainer = document.getElementById("sparkles");
+
+for(let i=0;i<80;i++){
+
+const sparkle=document.createElement("div");
+
+sparkle.classList.add("sparkle");
+
+sparkle.style.left=Math.random()*100+"%";
+
+sparkle.style.animationDuration=
+(8+Math.random()*10)+"s";
+
+sparkle.style.animationDelay=
+Math.random()*10+"s";
+
+sparkle.style.opacity=
+Math.random();
+
+sparkle.style.transform=
+`scale(${Math.random()*2})`;
+
+sparkleContainer.appendChild(sparkle);
+
+}
