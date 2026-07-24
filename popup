@@ -1,3 +1,9 @@
+<body>
+
+<div id="sparkles"></div>
+
+<section class="hero">
+
 <div class="popup" id="popup">
 
 <div class="popupCard">
