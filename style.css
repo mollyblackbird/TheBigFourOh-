@@ -13,7 +13,7 @@ body{
     font-family:'Poppins',sans-serif;
 
     background:
-   radial-gradient(circle at top,#9579D0 20%,#843ED2 45%,#baa5f0 100%);
+   radial-gradient(circle at top,#9579D0 20%,#843ED2 45%,#baa5f0 10%);
 
     color:white;
 
