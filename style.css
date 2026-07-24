@@ -12,8 +12,8 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:
-   radial-gradient(circle at top, #FFB7B2 20%, #B5EAD7 45%, #FFFFFC 10%)
+  background: #947CD4;
+background: linear-gradient(148deg, rgba(148, 124, 212, 1) 0%, rgba(245, 214, 250, 1) 100%);
 
     color:white;
 
@@ -107,11 +107,11 @@ body::before{
 
 .card{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(245,214,255,.08);
 
     backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,250,1);
 
     border-radius:24px;
 
@@ -296,7 +296,7 @@ button{
 
     background:linear-gradient(90deg,#947CD4,#a68fe3);
 
-    color:#111;
+    color:#E1F57A;
 
     font-weight:700;
 
