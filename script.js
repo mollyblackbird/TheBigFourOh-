@@ -3,73 +3,134 @@ console.log("Script started");
 const supabaseUrl = "https://ozctyywmsukcsryhnsud.supabase.co/rest/v1/";
 const supabaseKey = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
 
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-console.log("Supabase client created");
+// =====================================
+// SUPABASE CONFIGURATION
+// =====================================
+
+// Replace these with your own values later
+const SUPABASE_URL = "https://ozctyywmsukcsryhnsud.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
+
+// Create Supabase client
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
+
+// =====================================
+// ELEMENTS
+// =====================================
 
 const form = document.getElementById("birthdayForm");
+
+const nameInput = document.getElementById("name");
+
+const messageInput = document.getElementById("message");
+
+const counter = document.getElementById("characters");
+
 const popup = document.getElementById("popup");
 
-console.log("Form:", form);
-console.log("Popup:", popup);
+const closePopup = document.getElementById("closePopup");
+
+const loading = document.getElementById("loading");
+
+const submitButton = document.getElementById("submitButton");
+
+// =====================================
+// CHARACTER COUNTER
+// =====================================
+
+messageInput.addEventListener("input", () => {
+
+    counter.textContent = messageInput.value.length;
+
+});
+
+// =====================================
+// CLOSE POPUP
+// =====================================
+
+closePopup.addEventListener("click", () => {
+
+    popup.classList.add("hidden");
+
+});
+
+// =====================================
+// FORM SUBMISSION
+// =====================================
 
 form.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    console.log("Submit clicked");
+    const guestName = nameInput.value.trim();
 
-    const name = document.getElementById("name").value;
-    const message = document.getElementById("message").value;
+    const guestMessage = messageInput.value.trim();
 
-    console.log(name, message);
+    // Validation
+
+    if (guestMessage.length === 0) {
+
+        alert("Please write a birthday message.");
+
+        return;
+
+    }
+
+    // Prevent multiple clicks
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = "Sending...";
+
+    loading.classList.remove("hidden");
 
     try {
 
-        const result = await supabase
-            .from("messages")
+        const { error } = await supabaseClient
+            .from("birthday_messages")
             .insert([
                 {
-                    name,
-                    message
+                    name: guestName,
+                    message: guestMessage
                 }
             ]);
 
-        console.log(result);
+        if (error) {
 
-        if(result.error){
-
-            console.error(result.error);
-
-            alert(result.error.message);
-
-            return;
+            throw error;
 
         }
 
-        console.log("Success!");
-
-        confetti({
-            particleCount:200,
-            spread:120
-        });
-
-        popup.style.display="flex";
+        // Reset form
 
         form.reset();
 
-    } catch(err){
+        counter.textContent = "0";
 
-        console.error(err);
+        // Show thank you popup
 
-        alert(err.message);
+        popup.classList.remove("hidden");
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Sorry, something went wrong while saving your message."
+        );
+
+    } finally {
+
+        loading.classList.add("hidden");
+
+        submitButton.disabled = false;
+
+        submitButton.textContent = "Send Birthday Wish ❤️";
 
     }
 
 });
-
-function closePopup(){
-
-    popup.style.display="none";
-
-}
