@@ -107,7 +107,7 @@ body::before{
 
 .card{
 
-    background:rgba(245,214,255,.08);
+    background:rgba(245,214,255,1);
 
     backdrop-filter:blur(18px);
 
@@ -174,6 +174,7 @@ body::before{
 .subtitle{
 
     font-size:1.2rem;
+   color:white;
 
     font-weight:600;
 
@@ -209,7 +210,7 @@ label{
 
     font-weight:600;
 
-    color:#FFE58A;
+    color:#E1F57A;
 
 }
 
@@ -230,7 +231,7 @@ textarea{
 
     font-family:inherit;
 
-    background:rgba(255,255,255,.10);
+    background:rgba(251,246,211,1);
 
     color:white;
 
@@ -294,9 +295,9 @@ button{
 
     border-radius:12px;
 
-    background:linear-gradient(90deg,#947CD4,#a68fe3);
+    background: #7C57D0;
 
-    color:#E1F57A;
+    color: #E1F57A;
 
     font-weight:700;
 
