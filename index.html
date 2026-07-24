@@ -10,19 +10,34 @@
 
 <link rel="stylesheet" href="style.css">
 
+  <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 <body>
 
-  <div id="sparkles"></div>
+ <div class="background-overlay"></div>
 
 <div class="container">
+  
+   <div class="card">
+
+        <div class="hero">
 
 <h1>Made in 1986</h1>
 
-<h2>Leave a birthday message</h2>
+   <p class="subtitle">
+     Leave a birthday message</h2>
+          </p>
 
-<p>
+<p class="description">
 I love your curiosity! <br>
 Thank you for taking the time! <br><br>
 Today is my 40th birthday, and your phone just connected us.<br>
@@ -34,33 +49,46 @@ Help me build this digital artwork by answering just one of these:
 <li>A quick (or not), birthday wish for a stranger</li>
 <li>A song you would play on your birthday</li>
 </ul>
+           </div>
 
-<form id="birthdayForm">
+ <form id="birthdayForm">
 
-<input
-type="text"
-id="name"
-autocomplete="name"
-placeholder="Your name (optional)">
+            <div class="form-group">
 
-<textarea
-id="message"
-autocomplete="off"
-placeholder="Write your birthday message..."
-required>
-</textarea>
+                <label for="name">
+                    Your Name (Optional)
+                </label>
 
-<button type="submit">
+               <textarea
+                    id="message"
+                    maxlength="500"
+                    required
+                    placeholder="Write something memorable..."></textarea>
+
+ <div class="counter">
+                    <span id="characters">0</span>/500
+                </div>
+
+            </div>
+
+<button
+                id="submitButton"
+                type="submit">
 Send
 </button>
 
 </form>
 
 </div>
+  </div>
+  <!-- Thank You Popup -->
 
-<div id="popup" class="popup">
+<div id="popup" class="popup hidden">
 
-<div class="popup-content">
+    <div class="popup-content">
+         <div class="success-icon">
+            🎉
+        </div>
 
 <h2>Thank You!</h2>
 
@@ -68,17 +96,22 @@ Send
 Your birthday message has been received.
 </p>
 
-<button onclick="closePopup()">
-Close
-</button>
+<button id="closePopup">
+            Close
+        </button>
 
 </div>
 
 </div>
+  <!-- Loading -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<div id="loading" class="loading hidden">
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <div class="spinner"></div>
+
+    <p>Saving your message...</p>
+
+</div>
 
 <script src="script.js"></script>
 
