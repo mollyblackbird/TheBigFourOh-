@@ -1,91 +1,75 @@
-console.log("SCRIPT LOADED");
+console.log("Script started");
 
 const supabaseUrl = "https://ozctyywmsukcsryhnsud.supabase.co";
-
 const supabaseKey = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
 
-const supabase = window.supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-);
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+console.log("Supabase client created");
 
 const form = document.getElementById("birthdayForm");
-
 const popup = document.getElementById("popup");
 
-form.addEventListener("submit", async function(event){
-    
-    console.log("FORM SUBMITTED");
+console.log("Form:", form);
+console.log("Popup:", popup);
 
-event.preventDefault();
+form.addEventListener("submit", async (event) => {
 
-const name = document.getElementById("name").value;
+    event.preventDefault();
 
-const message = document.getElementById("message").value;
+    console.log("Submit clicked");
 
-const { error } = await supabase
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
 
-.from("messages")
+    console.log(name, message);
 
-.insert([
-{
-name:name,
-message:message
-}
-]);
+    try {
 
-if (error) {
-    console.error("Supabase error:", error);
-    alert(JSON.stringify(error, null, 2));
-    return;
-}
+        const result = await supabase
+            .from("messages")
+            .insert([
+                {
+                    name,
+                    message
+                }
+            ]);
 
-}
+        console.log(result);
 
-confetti({
+        if(result.error){
 
-particleCount:200,
+            console.error(result.error);
 
-spread:120,
+            alert(result.error.message);
 
-origin:{y:0.6}
+            return;
 
-});
+        }
 
-popup.style.display="flex";
+        console.log("Success!");
 
-form.reset();
+        confetti({
+            particleCount:200,
+            spread:120
+        });
+
+        popup.style.display="flex";
+
+        form.reset();
+
+    } catch(err){
+
+        console.error(err);
+
+        alert(err.message);
+
+    }
 
 });
 
 function closePopup(){
 
-popup.style.display="none";
-
-}
-
-const sparkleContainer = document.getElementById("sparkles");
-
-for(let i=0;i<80;i++){
-
-const sparkle=document.createElement("div");
-
-sparkle.classList.add("sparkle");
-
-sparkle.style.left=Math.random()*100+"%";
-
-sparkle.style.animationDuration=
-(8+Math.random()*10)+"s";
-
-sparkle.style.animationDelay=
-Math.random()*10+"s";
-
-sparkle.style.opacity=
-Math.random();
-
-sparkle.style.transform=
-`scale(${Math.random()*2})`;
-
-sparkleContainer.appendChild(sparkle);
+    popup.style.display="none";
 
 }
