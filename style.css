@@ -78,7 +78,7 @@ body::before{
 
     inset:0;
 
-    background:rgba(148,124,212,1);
+     background: linear-gradient(135deg, #947CD4, #F5D6FA);
 
     backdrop-filter:blur(2px);
 
@@ -106,7 +106,7 @@ body::before{
 
 .card{
 
-    background:rgba(245,214,255,1);
+    background: #9579D0;
 
     backdrop-filter:blur(18px);
 
