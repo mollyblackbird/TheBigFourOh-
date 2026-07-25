@@ -107,7 +107,7 @@ body::before{
 
 .card{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
 
     backdrop-filter:blur(18px);
 
@@ -174,7 +174,7 @@ body::before{
 .subtitle{
 
     font-size:1.2rem;
-    color:#3A3466;
+    color:#EAF7ED;
 
     font-weight:600;
 
@@ -210,7 +210,7 @@ label{
 
     font-weight:600;
 
-    color:#FFE58A;
+    color:#E1F57A;
 
 }
 
@@ -219,7 +219,7 @@ textarea{
 
     width:100%;
 
-    border:none;
+    border-color:#E1F57A;
 
     outline:none;
 
@@ -244,14 +244,14 @@ textarea{
 input::placeholder,
 textarea::placeholder{
 
-    color:#bbbbbb;
+    color:ffffff;
 
 }
 
 input:focus,
 textarea:focus{
 
-    border-color:#FFD54A;
+    border-color:#E1F57A;
 
     box-shadow:0 0 12px rgba(255,215,0,.35);
 
@@ -295,9 +295,9 @@ button{
 
     border-radius:12px;
 
-    background:linear-gradient(90deg,#FFD54A,#F5B700);
+    background:linear-gradient(90deg,#16002E,#27054d;
 
-    color:#111;
+    color:#E1F57A;
 
     font-weight:700;
 
@@ -341,7 +341,7 @@ button:active{
 
     align-items:center;
 
-    background:rgba(0,0,0,.65);
+    background:rgba(225,245,122,.65);
 
     z-index:100;
 
@@ -353,9 +353,9 @@ button:active{
 
     max-width:420px;
 
-    background:#ffffff;
+    background:#E1F57A;
 
-    color:#222;
+    color:#9579D0;
 
     border-radius:20px;
 
@@ -399,7 +399,7 @@ button:active{
 
     margin-bottom:15px;
 
-    color:#111;
+    color:#16002E;
 
 }
 
@@ -413,9 +413,9 @@ button:active{
 
 .popup button{
 
-    background:#111;
+    background:#BEADD7;
 
-    color:white;
+    color:#E1F57A;
 
 }
 
