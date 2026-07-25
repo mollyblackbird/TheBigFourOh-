@@ -243,7 +243,7 @@ textarea{
 input::placeholder,
 textarea::placeholder{
 
-    color:white;
+    color:#ffffff;
 
 }
 
@@ -274,7 +274,7 @@ textarea{
 
     margin-top:8px;
 
-    color:white;
+    color:#ffffff;
 
     font-size:.85rem;
 
@@ -296,7 +296,7 @@ button{
 
     background:linear-gradient(90deg,#16002E,#4f1394;
 
-    color:#E1F57A;
+    color:#111;
 
     font-weight:700;
 
