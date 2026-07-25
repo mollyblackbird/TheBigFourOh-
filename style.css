@@ -174,7 +174,7 @@ body::before{
 .subtitle{
 
     font-size:1.2rem;
-    color:#EAF7ED;
+    color:#604c8c;
 
     font-weight:600;
 
@@ -184,7 +184,7 @@ body::before{
 
 .description{
 
-    color:#FEEFF2;
+    color:white;
 
     line-height:1.7;
 
@@ -244,7 +244,7 @@ textarea{
 input::placeholder,
 textarea::placeholder{
 
-    color:ffffff;
+    color:white;
 
 }
 
@@ -275,7 +275,7 @@ textarea{
 
     margin-top:8px;
 
-    color:#cccccc;
+    color:white;
 
     font-size:.85rem;
 
@@ -295,7 +295,7 @@ button{
 
     border-radius:12px;
 
-    background:linear-gradient(90deg,#16002E,#27054d;
+    background:linear-gradient(90deg,#16002E,#4f1394;
 
     color:#E1F57A;
 
