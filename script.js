@@ -1,7 +1,7 @@
 console.log("Script started");
 
-const supabaseUrl = "https://ozctyywmsukcsryhnsud.supabase.co/rest/v1/";
-const supabaseKey = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
+const supabaseUrl = "https://kycmbburiykjsjhrnjoj.supabase.co";
+const supabaseKey = "sb_publishable_bJ12BqQ4fYn1tppW3cshNQ_KYV1Xoas";
 
 
 // =====================================
@@ -9,8 +9,8 @@ const supabaseKey = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
 // =====================================
 
 // Replace these with your own values later
-const SUPABASE_URL = "https://ozctyywmsukcsryhnsud.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_zzN79OLLJ2aw37wdv9Ej5A_wNUA9GG1";
+const SUPABASE_URL = "https://kycmbburiykjsjhrnjoj.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_bJ12BqQ4fYn1tppW3cshNQ_KYV1Xoas";
 
 // Create Supabase client
 const supabaseClient = supabase.createClient(
