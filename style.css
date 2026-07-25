@@ -79,7 +79,7 @@ body::before{
 
     inset:0;
 
-    background:rgba(127,17,224,.30);
+    background:rgba(0,0,0,.30);
 
     backdrop-filter:blur(2px);
 
@@ -107,7 +107,7 @@ body::before{
 
 .card{
 
-    background:rgba(255,255,255,.10);
+    background:rgba(255,255,255,.08);
 
     backdrop-filter:blur(18px);
 
@@ -163,7 +163,7 @@ body::before{
 
     font-size:2.8rem;
 
-    color:#E1F57A;
+    color:#FFD54A;
 
     margin-bottom:15px;
 
@@ -174,7 +174,7 @@ body::before{
 .subtitle{
 
     font-size:1.2rem;
-    
+
     font-weight:600;
 
     margin-bottom:10px;
@@ -183,7 +183,7 @@ body::before{
 
 .description{
 
-    color:white;
+    color:#dddddd;
 
     line-height:1.7;
 
@@ -209,7 +209,7 @@ label{
 
     font-weight:600;
 
-    color:#E1F57A;
+    color:#FFE58A;
 
 }
 
@@ -218,7 +218,7 @@ textarea{
 
     width:100%;
 
-    border-color:#E1F57A;
+    border:none;
 
     outline:none;
 
@@ -243,14 +243,14 @@ textarea{
 input::placeholder,
 textarea::placeholder{
 
-    color:#ffffff;
+    color:#bbbbbb;
 
 }
 
 input:focus,
 textarea:focus{
 
-    border-color:#E1F57A;
+    border-color:#FFD54A;
 
     box-shadow:0 0 12px rgba(255,215,0,.35);
 
@@ -274,7 +274,7 @@ textarea{
 
     margin-top:8px;
 
-    color:#ffffff;
+    color:#cccccc;
 
     font-size:.85rem;
 
@@ -294,7 +294,7 @@ button{
 
     border-radius:12px;
 
-    background:linear-gradient(90deg,#16002E,#4f1394;
+    background:linear-gradient(90deg,#FFD54A,#F5B700);
 
     color:#111;
 
@@ -352,9 +352,9 @@ button:active{
 
     max-width:420px;
 
-    background:#5e427d;
+    background:#ffffff;
 
-    color:#e1f57a;
+    color:#222;
 
     border-radius:20px;
 
@@ -398,7 +398,7 @@ button:active{
 
     margin-bottom:15px;
 
-    color:#e1f57a;
+    color:#111;
 
 }
 
@@ -412,9 +412,9 @@ button:active{
 
 .popup button{
 
-    background:#E1F57A;
+    background:#111;
 
-    color:#5e427d;
+    color:white;
 
 }
 
