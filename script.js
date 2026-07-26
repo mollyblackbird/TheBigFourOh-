@@ -129,7 +129,7 @@ form.addEventListener("submit", async (event) => {
 
         submitButton.disabled = false;
 
-        submitButton.textContent = "Send Birthday Wish ❤️";
+        submitButton.textContent = "Send More Birthday Wishes...";
 
     }
 
