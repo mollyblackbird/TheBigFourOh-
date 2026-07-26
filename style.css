@@ -352,7 +352,7 @@ button:active{
 
     max-width:420px;
 
-    background:linear-gradient(90deg,#582C74,#2F1552);
+    background:linear-gradient(45deg,#582C74,#2F1552);
 
     color:#E1F57A;
 
@@ -412,9 +412,9 @@ button:active{
 
 .popup button{
 
-    background:#9579D0;
+    background:#E1F57A;
 
-    color:white;
+    color:#111;
 
 }
 
