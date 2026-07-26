@@ -250,7 +250,7 @@ textarea::placeholder{
 input:focus,
 textarea:focus{
 
-    border-color:#FFD54A;
+    border-color:#E1F57A;
 
     box-shadow:0 0 12px rgba(255,215,0,.35);
 
